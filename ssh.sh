@@ -31,10 +31,10 @@ set SERVER_4_USER "user4"
 # SET THE PORT HERE #
 # OR BLANK FOR '22' #
 #-------------------#
-set SERVER_1_PORT ""
-set SERVER_2_PORT ""
-set SERVER_3_PORT ""
-set SERVER_4_PORT ""
+set SERVER_1_PORT "22"
+set SERVER_2_PORT "22"
+set SERVER_3_PORT "22"
+set SERVER_4_PORT "22"
 
 #-------------------#
 #--- END CONFIGS ---#
