@@ -57,9 +57,7 @@ However, this does not provide additional security (It isn't even security throu
 <p align="center">
 <br>
 <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike> Screenshot of "multiserver.sh" <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike><br><br>
+</p>
 <center>
 <img src="https://raw.githubusercontent.com/NLDev/SSH-Starter-Interface/master/.src/scr1.png" />
 </center>
-<br>
-</p>
-
