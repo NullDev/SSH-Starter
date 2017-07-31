@@ -1,5 +1,5 @@
 .PHONY: Clean Test
 
 test:
-	./ssh.sh
+	./ssh.sh 1
   
