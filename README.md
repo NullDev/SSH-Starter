@@ -39,3 +39,27 @@ https://github.com/NLDev/SSH-Starter
 6. Thats it! You can either start in from the terminal with <br>
 &nbsp;&nbsp;&nbsp;$ `./ssh.sh` <br>
 Or by doubleclicking it!
+
+## Optional:
+
+If you do not want to store your password in the script directly, you could create a passwor file. Lets say you create a file called "p" in your home directory and store the password there. Then you can use 
+
+`set SERVER_1_PKEY [exec cat ~/p]`
+
+instead of 
+
+`set SERVER_1_PKEY "passwort1"`
+
+on <a href="https://github.com/NLDev/SSH-Starter-Interface/blob/master/ssh.sh#L8-L11">Line 8 to 11</a>.
+
+However, this does not provide additional security (It isn't even security through obscurity). This is just for storing the password somewhere else instead of directly inside the script.
+
+<p align="center">
+<br>
+<strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike> Screenshot of "multiserver.sh" <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike><br><br>
+<div style="display:flex;">
+<img src="https://raw.githubusercontent.com/NLDev/SSH-Starter-Interface/master/.src/scr1.png" />
+</div>
+<br>
+</p>
+
