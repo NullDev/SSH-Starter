@@ -40,98 +40,50 @@ set SERVER_4_PORT "22"
 #--- END CONFIGS ---#
 #-------------------#
 
-proc s1 {SERVER_1_PKEY SERVER_1_HOST SERVER_1_USER SERVER_1_PORT} {
-	global spawn_out
-	if   {$SERVER_1_PORT eq ""} {set $SERVER_1_PORT "22"}
-	if   {$SERVER_1_HOST eq ""} {puts "Invalid hostname."}
-	trap {
-		set XZ [stty rows   ]
-		set YZ [stty columns]
-		stty rows $XZ columns $YZ < $spawn_out(slave,name)
-	} WINCH
-	send_user "\033c"
-	spawn ssh ${SERVER_1_USER}@${SERVER_1_HOST} -p ${SERVER_1_PORT}
-	#[p|P]
-	expect "assword:"
-	send "${SERVER_1_PKEY}\r"
-	interact
-}
+trap {
+        set XZ [stty rows   ]
+        set YZ [stty columns]
+        stty rows $XZ columns $YZ < $spawn_out(slave,name)
+} WINCH
 
-proc s2 {} {
-	global spawn_out
-	if   {$SERVER_2_PORT eq ""} {set $SERVER_2_PORT "22"}
-	if   {$SERVER_2_HOST eq ""} {puts "Invalid hostname."}
-	trap {
-		set XZ [stty rows   ]
-		set YZ [stty columns]
-		stty rows $XZ columns $YZ < $spawn_out(slave,name)
-	} WINCH
-	send_user "\033c"
-	spawn ssh ${SERVER_2_USER}@${SERVER_2_HOST} -p ${SERVER_2_PORT}
-	#[p|P]
-	expect "assword:"
-	send "${SERVER_2_PKEY}\r"
-	interact
-}
-
-proc s3 {} {
-	global spawn_out
-	if   {$SERVER_3_PORT eq ""} {set $SERVER_3_PORT "22"}
-	if   {$SERVER_3_HOST eq ""} {puts "Invalid hostname."}
-	trap {
-		set XZ [stty rows   ]
-		set YZ [stty columns]
-		stty rows $XZ columns $YZ < $spawn_out(slave,name)
-	} WINCH
-	send_user "\033c"
-	spawn ssh ${SERVER_3_USER}@${SERVER_3_HOST} -p ${SERVER_3_PORT}
-	#[p|P]
-	expect "assword:"
-	send "${SERVER_3_PKEY}\r"
-	interact
-}
-
-proc s4 {} {
-	global spawn_out
-	if   {$SERVER_4_PORT eq ""} {set $SERVER_4_PORT "22"}
-	if   {$SERVER_4_HOST eq ""} {puts "Invalid hostname."}
-	trap {
-		set XZ [stty rows   ]
-		set YZ [stty columns]
-		stty rows $XZ columns $YZ < $spawn_out(slave,name)
-	} WINCH
-	send_user "\033c"
-	spawn ssh ${SERVER_4_USER}@${SERVER_4_HOST} -p ${SERVER_4_PORT}
-	#[p|P]
-	expect "assword:"
-	send "${SERVER_4_PKEY}\r"
-	interact
+proc srv {SERVER_X_PKEY SERVER_X_HOST SERVER_X_USER SERVER_X_PORT} {
+        global spawn_out
+        if   {$SERVER_X_PORT eq ""} {set $SERVER_X_PORT "22"}
+        if   {$SERVER_X_HOST eq ""} {puts "Invalid hostname."}
+        send_user "\033c"
+        spawn ssh ${SERVER_X_USER}@${SERVER_X_HOST} -p ${SERVER_X_PORT}
+        #[p|P]
+        expect "assword:"
+        send "${SERVER_X_PKEY}\r"
+        interact
 }
 
 set arg [lindex $argv 0]
 switch $arg {
-	""  { set CHOICE "0" }
-	"1" { set CHOICE "1" }
-	"2" { set CHOICE "2" }
-	"3" { set CHOICE "3" }
-	"4" { set CHOICE "4" }
+        ""  { set CHOICE "0" }
+        "1" { set CHOICE "1" }
+        "2" { set CHOICE "2" }
+        "3" { set CHOICE "3" }
+        "4" { set CHOICE "4" }
 }
 
 if {$CHOICE eq "0"} {
-	puts "\n ############################\n #--------------------------#"
-	puts " #- SSH STARTER BY NULLDEV -#\n #--------------------------#\n ############################\n"
-	puts " Please Choose server:\n\n 1 - $SERVER_1_HOST \n 2 - $SERVER_2_HOST \n 3 - $SERVER_3_HOST \n 4 - $SERVER_4_HOST \n"
-	puts -nonewline " Input \[1,2,3,4\]: "
-	flush stdout
-	gets stdin SERVER
-	if {$SERVER eq "1"} { s1 $SERVER_1_PKEY $SERVER_1_HOST $SERVER_1_USER $SERVER_1_PORT }
-	if {$SERVER eq "2"} { s2 $SERVER_2_PKEY $SERVER_2_HOST $SERVER_2_USER $SERVER_2_PORT }
-	if {$SERVER eq "3"} { s3 $SERVER_3_PKEY $SERVER_3_HOST $SERVER_3_USER $SERVER_3_PORT }
-	if {$SERVER eq "4"} { s4 $SERVER_4_PKEY $SERVER_4_HOST $SERVER_4_USER $SERVER_4_PORT }
+        puts "\n ############################\n #--------------------------#"
+        puts " #- SSH STARTER BY NULLDEV -#\n #--------------------------#\n ############################\n"
+        puts " Please Choose server:\n\n 1 - $SERVER_1_HOST \n 2 - $SERVER_2_HOST \n 3 - $SERVER_3_HOST \n 4 - $SERVER_4_HOST \n"
+        puts -nonewline " Input \[1,2,3,4\]: "
+        flush stdout
+        gets stdin SERVER
+        if {$SERVER eq "1"} { srv $SERVER_1_PKEY $SERVER_1_HOST $SERVER_1_USER $SERVER_1_PORT }
+        if {$SERVER eq "2"} { srv $SERVER_2_PKEY $SERVER_2_HOST $SERVER_2_USER $SERVER_2_PORT }
+        if {$SERVER eq "3"} { srv $SERVER_3_PKEY $SERVER_3_HOST $SERVER_3_USER $SERVER_3_PORT }
+        if {$SERVER eq "4"} { srv $SERVER_4_PKEY $SERVER_4_HOST $SERVER_4_USER $SERVER_4_PORT }
 }
 
-if {$CHOICE eq "1"} { s1 $SERVER_1_PKEY $SERVER_1_HOST $SERVER_1_USER $SERVER_1_PORT }
-if {$CHOICE eq "2"} { s2 $SERVER_2_PKEY $SERVER_2_HOST $SERVER_2_USER $SERVER_2_PORT }
-if {$CHOICE eq "3"} { s3 $SERVER_3_PKEY $SERVER_3_HOST $SERVER_3_USER $SERVER_3_PORT }
-if {$CHOICE eq "4"} { s4 $SERVER_4_PKEY $SERVER_4_HOST $SERVER_4_USER $SERVER_4_PORT }
+if {$CHOICE eq "1"} { srv $SERVER_1_PKEY $SERVER_1_HOST $SERVER_1_USER $SERVER_1_PORT }
+if {$CHOICE eq "2"} { srv $SERVER_2_PKEY $SERVER_2_HOST $SERVER_2_USER $SERVER_2_PORT }
+if {$CHOICE eq "3"} { srv $SERVER_3_PKEY $SERVER_3_HOST $SERVER_3_USER $SERVER_3_PORT }
+if {$CHOICE eq "4"} { srv $SERVER_4_PKEY $SERVER_4_HOST $SERVER_4_USER $SERVER_4_PORT }
+
+
 
