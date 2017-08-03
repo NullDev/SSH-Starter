@@ -41,6 +41,7 @@ set SERVER_4_PORT "22"
 #-------------------#
 
 proc s1 {SERVER_1_PKEY SERVER_1_HOST SERVER_1_USER SERVER_1_PORT} {
+	global spawn_out
 	if   {$SERVER_1_PORT eq ""} {set $SERVER_1_PORT "22"}
 	if   {$SERVER_1_HOST eq ""} {puts "Invalid hostname."}
 	trap {
@@ -57,6 +58,7 @@ proc s1 {SERVER_1_PKEY SERVER_1_HOST SERVER_1_USER SERVER_1_PORT} {
 }
 
 proc s2 {} {
+	global spawn_out
 	if   {$SERVER_2_PORT eq ""} {set $SERVER_2_PORT "22"}
 	if   {$SERVER_2_HOST eq ""} {puts "Invalid hostname."}
 	trap {
@@ -73,6 +75,7 @@ proc s2 {} {
 }
 
 proc s3 {} {
+	global spawn_out
 	if   {$SERVER_3_PORT eq ""} {set $SERVER_3_PORT "22"}
 	if   {$SERVER_3_HOST eq ""} {puts "Invalid hostname."}
 	trap {
@@ -89,6 +92,7 @@ proc s3 {} {
 }
 
 proc s4 {} {
+	global spawn_out
 	if   {$SERVER_4_PORT eq ""} {set $SERVER_4_PORT "22"}
 	if   {$SERVER_4_HOST eq ""} {puts "Invalid hostname."}
 	trap {
