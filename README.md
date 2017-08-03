@@ -6,9 +6,11 @@ You can specify <b>hostname</b>, <b>password</b>, <b>port</b> and <b>username</b
 
 <sup>"ssh.sh" - When 97% of your keyboard is broken...</sup>
 
+> Tested on Ubuntu 16.04 and 14.04
+
 This script also features CLI arguments so you can connect to your server instantly without getting prompted to choose a server.
 
-usage:<br>
+Usage:<br>
 $ `./ssh.sh 1`<br>
 $ `./ssh.sh 2`<br>
 $ `./ssh.sh 3`<br>
