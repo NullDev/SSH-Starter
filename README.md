@@ -16,6 +16,10 @@ $ `./ssh.sh 2`<br>
 $ `./ssh.sh 3`<br>
 $ `./ssh.sh 4`
 
+### Small code info:
+`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L56">Line 56</a> is not a typo. 
+It matches "Password" as well as "password".
+
 ## HOW TO INSTALL
 
 1. Install expect script <br>
