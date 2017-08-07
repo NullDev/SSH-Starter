@@ -16,10 +16,6 @@ $ `./ssh.sh 2`<br>
 $ `./ssh.sh 3`<br>
 $ `./ssh.sh 4`
 
-This repository is an advanced version of my previous script "SSH Starter".<br>
-There is also an code explanation:<br>
-https://github.com/NLDev/SSH-Starter
-
 ## HOW TO INSTALL
 
 1. Install expect script <br>
