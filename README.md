@@ -23,7 +23,7 @@ $ `./ssh.sh 4`
 &nbsp;&nbsp;&nbsp;$ `sudo apt-get install expect` <br>
 
 2. Clone and navigate to this repository <br>
-&nbsp;&nbsp;&nbsp;$ `git clone https://github.com/NLDev/SSH-Starter-Interface.git && cd SSH-Starter-Interface` <br>
+&nbsp;&nbsp;&nbsp;$ `git clone https://github.com/NLDev/SSH-Starter.git && cd SSH-Starter` <br>
 
 3. Move the script wherever you want <br>
 &nbsp;&nbsp;&nbsp;$ `mv ssh.sh ..`<br>
@@ -46,9 +46,9 @@ If you do not want to store your password in the script directly, you could crea
 
 instead of 
 
-`set SERVER_1_PKEY "passwort1"`
+`set SERVER_1_PKEY "password1"`
 
-on <a href="https://github.com/NLDev/SSH-Starter-Interface/blob/master/ssh.sh#L8-L11">Line 8 to 11</a>.
+on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L8-L11">Line 8 to 11</a>.
 
 However, this does not provide additional security (It isn't even security through obscurity). This is just for storing the password somewhere else instead of directly inside the script.
 
@@ -57,5 +57,5 @@ However, this does not provide additional security (It isn't even security throu
 <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike> Screenshot of "multiserver.sh" <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike><br><br>
 </p>
 <center>
-<img src="https://raw.githubusercontent.com/NLDev/SSH-Starter-Interface/master/.src/scr1.png" />
+<img src="https://raw.githubusercontent.com/NLDev/SSH-Starter/master/.src/scr1.png" />
 </center>
