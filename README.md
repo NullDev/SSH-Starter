@@ -10,11 +10,17 @@ You can specify <b>hostname</b>, <b>password</b>, <b>port</b> and <b>username</b
 
 This script also features CLI arguments so you can connect to your server instantly without getting prompted to choose a server.
 
-Usage:<br>
+Usage: <br>
 $ `./ssh.sh 1`<br>
 $ `./ssh.sh 2`<br>
 $ `./ssh.sh 3`<br>
 $ `./ssh.sh 4`
+
+**Extra feature**: You can pass a command as argument, which will be executed after login!
+
+Example Usage: <br>
+$ `./ssh.sh 1 echo hello` <br>
+This will execute `echo hello` once the login was sucessful. 
 
 ### Small code info:
 `expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L58">Line 58</a> is not a typo. 
