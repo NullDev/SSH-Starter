@@ -19,7 +19,7 @@ $ `./ssh.sh 4`
 **Extra feature**: You can pass a command as argument, which will be executed after login!
 
 Example Usage: <br>
-$ `./ssh.sh 1 echo hello` <br>
+$ `./ssh.sh 1 echo hello` <br><br>
 This will execute `echo hello` once the login was sucessful. 
 
 ### Small code info:
