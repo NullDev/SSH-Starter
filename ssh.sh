@@ -55,7 +55,17 @@ proc srv {SERVER_X_PKEY SERVER_X_HOST SERVER_X_USER SERVER_X_PORT com} {
         send_user "\033c"
         spawn ssh ${SERVER_X_USER}@${SERVER_X_HOST} -p ${SERVER_X_PORT}
         #[p|P]
-        expect "assword:"
+        expect {
+                timeout {
+                        puts "\nError: It seems like this server is offline.\n"
+                        exit 0
+                }
+                eof {
+                        puts "\nError: It seems like this server is not available.\n"
+                        exit 0
+                }
+                "assword:"
+        }
         send "${SERVER_X_PKEY}\r"
         if {$EXECON eq "1"} {
                 sleep 5
