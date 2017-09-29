@@ -17,7 +17,7 @@ $ `./ssh.sh 3`<br>
 $ `./ssh.sh 4`
 
 ### Small code info:
-`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L56">Line 56</a> is not a typo. 
+`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L58">Line 58</a> is not a typo. 
 It matches "Password" as well as "password".
 
 ## HOW TO INSTALL
@@ -52,7 +52,7 @@ instead of
 
 `set SERVER_1_PKEY "password1"`
 
-on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L8-L11">Line 8 to 11</a>.
+on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L9-L12">Line 9 to 12</a>.
 
 However, this does not provide additional security (It isn't even security through obscurity). This is just for storing the password somewhere else instead of directly inside the script.
 
