@@ -1,6 +1,7 @@
 #!/usr/bin/expect -f
 set SERVER "0"
 set CHOICE "0"
+set EXECON "0"
 
 #-------------------#
 # SET PASSWORD HERE #
