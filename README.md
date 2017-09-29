@@ -1,4 +1,7 @@
 # SSH-Starter-Interface
+
+[![Build Status](https://travis-ci.org/NLDev/SSH-Starter.svg?branch=master)](https://travis-ci.org/NLDev/SSH-Starter)
+
 This is a newer version of my SSH Starter script.
 
 A small Expect script which will start SSH sessions with automatically entered password.<br>
@@ -23,7 +26,7 @@ $ `./ssh.sh 1 echo hello` <br><br>
 This will execute `echo hello` once the login was sucessful. 
 
 ### Small code info:
-`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L58">Line 58</a> is not a typo. 
+`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L67">Line 67</a> is not a typo. 
 It matches "Password" as well as "password".
 
 ## HOW TO INSTALL
