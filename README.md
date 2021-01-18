@@ -1,6 +1,6 @@
 # SSH-Starter-Interface
 
-[![Build Status](https://travis-ci.org/NLDev/SSH-Starter.svg?branch=master)](https://travis-ci.org/NLDev/SSH-Starter)
+[![Build Status](https://travis-ci.org/NullDev/SSH-Starter.svg?branch=master)](https://travis-ci.org/NullDev/SSH-Starter)
 
 This is a newer version of my SSH Starter script.
 
@@ -26,7 +26,7 @@ $ `./ssh.sh 1 echo hello` <br><br>
 This will execute `echo hello` once the login was sucessful. 
 
 ### Small code info:
-`expect "assword:"` on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L67">Line 67</a> is not a typo. 
+`expect "assword:"` on <a href="https://github.com/NullDev/SSH-Starter/blob/master/ssh.sh#L67">Line 67</a> is not a typo. 
 It matches "Password" as well as "password".
 
 ## HOW TO INSTALL
@@ -36,7 +36,7 @@ It matches "Password" as well as "password".
 &nbsp;&nbsp;&nbsp;$ `sudo apt-get install expect` <br>
 
 2. Clone and navigate to this repository <br>
-&nbsp;&nbsp;&nbsp;$ `git clone https://github.com/NLDev/SSH-Starter.git && cd SSH-Starter` <br>
+&nbsp;&nbsp;&nbsp;$ `git clone https://github.com/NullDev/SSH-Starter.git && cd SSH-Starter` <br>
 
 3. Move the script wherever you want <br>
 &nbsp;&nbsp;&nbsp;$ `mv ssh.sh ..`<br>
@@ -61,7 +61,7 @@ instead of
 
 `set SERVER_1_PKEY "password1"`
 
-on <a href="https://github.com/NLDev/SSH-Starter/blob/master/ssh.sh#L9-L12">Line 9 to 12</a>.
+on <a href="https://github.com/NullDev/SSH-Starter/blob/master/ssh.sh#L9-L12">Line 9 to 12</a>.
 
 However, this does not provide additional security (It isn't even security through obscurity). This is just for storing the password somewhere else instead of directly inside the script.
 
@@ -70,5 +70,5 @@ However, this does not provide additional security (It isn't even security throu
 <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike> Screenshot <strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strike><br><br>
 </p>
 <center>
-<img src="https://raw.githubusercontent.com/NLDev/SSH-Starter/master/.src/scr1.png" />
+<img src="https://raw.githubusercontent.com/NullDev/SSH-Starter/master/.src/scr1.png" />
 </center>
